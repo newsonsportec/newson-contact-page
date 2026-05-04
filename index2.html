@@ -7,7 +7,7 @@
   <title>Contact Us | Newson Sportec</title>
 
   <style>
-    /* Reset browser default spacing */
+    /* Remove default browser spacing */
     * {
       margin: 0;
       padding: 0;
@@ -23,7 +23,7 @@
       overflow-x: hidden;
     }
 
-    /* Main page background */
+    /* Main background */
     .page {
       min-height: 100vh;
       background:
@@ -32,7 +32,7 @@
       position: relative;
     }
 
-    /* Subtle grid background */
+    /* Subtle background grid */
     .page::before {
       content: "";
       position: absolute;
@@ -45,7 +45,7 @@
       pointer-events: none;
     }
 
-    /* Top navigation section */
+    /* Top header */
     header {
       position: relative;
       z-index: 10;
@@ -57,13 +57,15 @@
       background: rgba(0, 0, 0, 0.78);
       border-bottom: 1px solid rgba(160, 255, 30, 0.35);
       backdrop-filter: blur(8px);
+      gap: 30px;
     }
 
     /*
-      Logo wrapper
-      This hides the thin white line on the left side of logo.png.
+      Logo box:
+      This hides/crops the left edge of logo.png.
+      It helps remove the white line on the left side.
     */
-    .logo-wrapper {
+    .logo-box {
       width: 600px;
       max-width: 42vw;
       overflow: hidden;
@@ -71,12 +73,12 @@
     }
 
     /*
-      Logo image
-      I moved it slightly left to hide the white line.
-      If the line still shows, change -8px to -12px.
+      Logo image:
+      translateX(-8px) moves the logo slightly left,
+      so the white line is hidden by the logo-box.
     */
     .logo {
-      width: 608px;
+      width: 610px;
       max-width: none;
       height: auto;
       display: block;
@@ -84,41 +86,40 @@
       filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.95));
     }
 
-    /* Navigation menu */
+    /* Top navigation menu */
     nav {
       display: flex;
       align-items: center;
-      gap: 42px;
+      gap: 32px;
       flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     /*
-      Menu words
-      Old font size was 16px.
-      16px x 1.5 = 24px.
+      Menu words:
+      Original was about 16px.
+      16px x 1.6 = 25.6px.
+      So this uses 26px.
     */
     nav a {
       color: #e8e8e8;
       text-decoration: none;
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 900;
-      letter-spacing: 1.2px;
+      letter-spacing: 1px;
       transition: 0.25s;
+      white-space: nowrap;
     }
 
     nav a:hover {
       color: #a7ff16;
     }
 
-    /*
-      Contact Us active button
-      Also made bigger to match the larger menu words.
-    */
     nav .active {
       color: #a7ff16;
-      padding: 16px 32px;
+      padding: 14px 28px;
       border: 1px solid #a7ff16;
-      border-radius: 38px;
+      border-radius: 30px;
       box-shadow: 0 0 18px rgba(167, 255, 22, 0.55);
     }
 
@@ -133,13 +134,14 @@
       align-items: center;
     }
 
+    /* Left contact area */
     .left-side {
       max-width: 1000px;
     }
 
     /*
       Contact Us image
-      x1.8 bigger version
+      x1.8 bigger
     */
     .contact-title-img {
       width: 1170px;
@@ -193,8 +195,8 @@
 
     /*
       Send Message image button
-      x1.8 bigger version
-      Only black blur, no green glow.
+      x1.8 bigger
+      No green glow, only black shadow.
     */
     .send-btn {
       width: 774px;
@@ -226,8 +228,8 @@
 
     /*
       Mascot image
-      x1.8 bigger version
-      Only black blur, no green glow.
+      x1.8 bigger
+      No green glow, only black shadow.
     */
     .mascot-card {
       width: 1134px;
@@ -236,7 +238,7 @@
       filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.95));
     }
 
-    /* Bottom signs image */
+    /* Bottom signs */
     .bottom-signs {
       position: relative;
       z-index: 3;
@@ -251,7 +253,7 @@
       display: block;
     }
 
-    /* Bottom-right floating email button */
+    /* Bottom-right green email button */
     .floating-email {
       position: fixed;
       right: 28px;
@@ -276,19 +278,38 @@
     }
 
     /* Tablet view */
-    @media (max-width: 1200px) {
+    @media (max-width: 1300px) {
+      nav a {
+        font-size: 22px;
+      }
+
+      nav {
+        gap: 22px;
+      }
+
+      .logo-box {
+        width: 520px;
+        max-width: 38vw;
+      }
+
+      .logo {
+        width: 530px;
+      }
+    }
+
+    @media (max-width: 1000px) {
       header {
         flex-direction: column;
-        gap: 24px;
+        gap: 20px;
       }
 
       nav {
         justify-content: center;
-        gap: 28px;
+        gap: 18px;
       }
 
       nav a {
-        font-size: 21px;
+        font-size: 20px;
       }
 
       .main-section {
@@ -300,13 +321,13 @@
         margin-top: 20px;
       }
 
-      .logo-wrapper {
+      .logo-box {
         width: 520px;
         max-width: 90vw;
       }
 
       .logo {
-        width: 528px;
+        width: 530px;
       }
 
       .contact-title-img {
@@ -324,16 +345,12 @@
 
     /* Mobile view */
     @media (max-width: 600px) {
-      nav {
-        gap: 15px;
-      }
-
       nav a {
         font-size: 15px;
       }
 
       nav .active {
-        padding: 10px 18px;
+        padding: 9px 16px;
       }
 
       .field input,
@@ -357,17 +374,25 @@
 
     <!-- Top logo and menu -->
     <header>
-      <a class="logo-wrapper" href="index2.html">
+
+      <!-- Logo with cropped left side to hide white line -->
+      <a class="logo-box" href="https://newsonsportec.wixsite.com/wheelparts">
         <img class="logo" src="logo.png" alt="Newson Sportec Logo">
       </a>
 
+      <!-- Top-right menu links -->
       <nav>
-        <a href="index2.html">HOME</a>
-        <a href="#">MOTORCYCLE</a>
-        <a href="#">BICYCLE</a>
-        <a href="#">WHEELCHAIR</a>
-        <a href="#">NEWS</a>
-        <a class="active" href="index2.html">CONTACT US</a>
+        <a href="https://newsonsportec.wixsite.com/wheelparts">HOME</a>
+
+        <a href="https://newsonsportec.wixsite.com/wheelparts/motorcycle">MOTORCYCLE</a>
+
+        <a href="https://newsonsportec.wixsite.com/wheelparts/bicycle">BICYCLE</a>
+
+        <a href="https://newsonsportec.wixsite.com/wheelparts/wheelchair">WHEELCHAIR</a>
+
+        <a href="https://www.facebook.com/Newsonsportecnews">NEWS</a>
+
+        <a class="active" href="https://newsonsportec.github.io/newson-contact-page/index2.html#">CONTACT US</a>
       </nav>
     </header>
 
@@ -443,11 +468,19 @@
         "&body=" + encodeURIComponent(body);
     }
 
+    /*
+      When users click the large Send Message image button,
+      this opens their email app with their message filled in.
+    */
     document.getElementById("contactForm").addEventListener("submit", function(event) {
       event.preventDefault();
       window.location.href = buildMailtoLink();
     });
 
+    /*
+      When users click the bottom-right green Send Email button,
+      this also opens their email app with their message filled in.
+    */
     document.getElementById("floatingEmail").addEventListener("click", function(event) {
       event.preventDefault();
       window.location.href = buildMailtoLink();
