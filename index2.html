@@ -146,33 +146,38 @@
     .social-area {
       display: flex;
       align-items: center;
-      gap: 18px;
-      margin-bottom: 28px;
+      gap: 28px;
+      margin-bottom: 36px;
       flex-wrap: wrap;
     }
 
     .social-title {
       color: #a7ff16;
-      font-size: 18px;
+      font-size: 24px;
       font-weight: 900;
       letter-spacing: 1px;
-      margin-right: 6px;
+      margin-right: 10px;
     }
 
+    /*
+      Social media icons:
+      Original size was 56px.
+      Now x2 bigger = 112px.
+    */
     .social-icon {
-      width: 56px;
-      height: 56px;
+      width: 112px;
+      height: 112px;
       border-radius: 50%;
       background: rgba(0, 0, 0, 0.78);
-      border: 1px solid #a7ff16;
+      border: 2px solid #a7ff16;
       color: #a7ff16;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      font-size: 22px;
+      font-size: 42px;
       font-weight: 900;
-      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.95);
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.95);
       transition: 0.25s;
     }
 
@@ -320,7 +325,7 @@
       background: #c5ff48;
     }
 
-    /* Tablet view */
+    /* Medium screen view */
     @media (max-width: 1300px) {
       nav a {
         font-size: 22px;
@@ -338,8 +343,15 @@
       .logo {
         width: 530px;
       }
+
+      .social-icon {
+        width: 92px;
+        height: 92px;
+        font-size: 34px;
+      }
     }
 
+    /* Tablet view */
     @media (max-width: 1000px) {
       header {
         flex-direction: column;
@@ -388,6 +400,12 @@
       .social-area {
         justify-content: center;
       }
+
+      .social-icon {
+        width: 86px;
+        height: 86px;
+        font-size: 32px;
+      }
     }
 
     /* Mobile view */
@@ -404,12 +422,13 @@
         width: 100%;
         text-align: center;
         margin-bottom: 6px;
+        font-size: 20px;
       }
 
       .social-icon {
-        width: 48px;
-        height: 48px;
-        font-size: 18px;
+        width: 70px;
+        height: 70px;
+        font-size: 24px;
       }
 
       .field input,
