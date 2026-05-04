@@ -7,14 +7,14 @@
   <title>Contact Us | Newson Sportec</title>
 
   <style>
-    /* Reset default browser spacing */
+    /* Reset browser default spacing */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* Whole website body */
+    /* Whole page */
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #050705;
@@ -32,7 +32,7 @@
       position: relative;
     }
 
-    /* Subtle background grid */
+    /* Subtle grid background */
     .page::before {
       content: "";
       position: absolute;
@@ -45,7 +45,7 @@
       pointer-events: none;
     }
 
-    /* Top navigation area */
+    /* Top navigation section */
     header {
       position: relative;
       z-index: 10;
@@ -60,10 +60,10 @@
     }
 
     /*
-      This box hides the white line on the left side of logo.png.
-      The image is slightly moved left inside the hidden box.
+      Logo wrapper
+      This hides the thin white line on the left side of logo.png.
     */
-    .logo-box {
+    .logo-wrapper {
       width: 600px;
       max-width: 42vw;
       overflow: hidden;
@@ -71,8 +71,9 @@
     }
 
     /*
-      Logo image x2 bigger.
-      The translateX(-8px) hides the white line on the left.
+      Logo image
+      I moved it slightly left to hide the white line.
+      If the line still shows, change -8px to -12px.
     */
     .logo {
       width: 608px;
@@ -87,23 +88,22 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 48px;
+      gap: 42px;
       flex-wrap: wrap;
     }
 
     /*
-      Menu words are x2 bigger.
-      Old size was around 16px.
-      New size is 32px.
+      Menu words
+      Old font size was 16px.
+      16px x 1.5 = 24px.
     */
     nav a {
       color: #e8e8e8;
       text-decoration: none;
-      font-size: 32px;
+      font-size: 24px;
       font-weight: 900;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
       transition: 0.25s;
-      white-space: nowrap;
     }
 
     nav a:hover {
@@ -111,13 +111,14 @@
     }
 
     /*
-      CONTACT US button is also x2 bigger.
+      Contact Us active button
+      Also made bigger to match the larger menu words.
     */
     nav .active {
       color: #a7ff16;
-      padding: 18px 36px;
+      padding: 16px 32px;
       border: 1px solid #a7ff16;
-      border-radius: 40px;
+      border-radius: 38px;
       box-shadow: 0 0 18px rgba(167, 255, 22, 0.55);
     }
 
@@ -137,7 +138,8 @@
     }
 
     /*
-      Contact Us image x1.8 bigger
+      Contact Us image
+      x1.8 bigger version
     */
     .contact-title-img {
       width: 1170px;
@@ -190,9 +192,9 @@
     }
 
     /*
-      Send Message image x1.8 bigger.
-      Green glow removed.
-      Only black blur.
+      Send Message image button
+      x1.8 bigger version
+      Only black blur, no green glow.
     */
     .send-btn {
       width: 774px;
@@ -223,9 +225,9 @@
     }
 
     /*
-      Mascot image x1.8 bigger.
-      Green glow removed.
-      Only black blur.
+      Mascot image
+      x1.8 bigger version
+      Only black blur, no green glow.
     */
     .mascot-card {
       width: 1134px;
@@ -249,7 +251,7 @@
       display: block;
     }
 
-    /* Bottom-right green email button */
+    /* Bottom-right floating email button */
     .floating-email {
       position: fixed;
       right: 28px;
@@ -275,32 +277,18 @@
 
     /* Tablet view */
     @media (max-width: 1200px) {
-      nav {
-        gap: 24px;
-      }
-
-      nav a {
-        font-size: 24px;
-      }
-
-      nav .active {
-        padding: 14px 28px;
-      }
-    }
-
-    @media (max-width: 1000px) {
       header {
         flex-direction: column;
-        gap: 20px;
+        gap: 24px;
       }
 
       nav {
         justify-content: center;
-        gap: 18px;
+        gap: 28px;
       }
 
       nav a {
-        font-size: 22px;
+        font-size: 21px;
       }
 
       .main-section {
@@ -312,7 +300,7 @@
         margin-top: 20px;
       }
 
-      .logo-box {
+      .logo-wrapper {
         width: 520px;
         max-width: 90vw;
       }
@@ -336,12 +324,16 @@
 
     /* Mobile view */
     @media (max-width: 600px) {
+      nav {
+        gap: 15px;
+      }
+
       nav a {
-        font-size: 16px;
+        font-size: 15px;
       }
 
       nav .active {
-        padding: 9px 16px;
+        padding: 10px 18px;
       }
 
       .field input,
@@ -365,7 +357,7 @@
 
     <!-- Top logo and menu -->
     <header>
-      <a class="logo-box" href="index2.html">
+      <a class="logo-wrapper" href="index2.html">
         <img class="logo" src="logo.png" alt="Newson Sportec Logo">
       </a>
 
