@@ -7,14 +7,14 @@
   <title>Contact Us | Newson Sportec</title>
 
   <style>
-    /* This removes default spacing from the browser */
+    /* Reset default browser spacing */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* Main website body */
+    /* Whole page style */
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #050705;
@@ -23,16 +23,16 @@
       overflow-x: hidden;
     }
 
-    /* Whole page background */
+    /* Main page background */
     .page {
       min-height: 100vh;
       background:
-        radial-gradient(circle at 75% 35%, rgba(157, 255, 0, 0.18), transparent 35%),
+        radial-gradient(circle at 75% 35%, rgba(157, 255, 0, 0.20), transparent 35%),
         linear-gradient(120deg, #030403 0%, #090c08 50%, #101908 100%);
       position: relative;
     }
 
-    /* Soft background grid effect */
+    /* Subtle grid background */
     .page::before {
       content: "";
       position: absolute;
@@ -45,7 +45,7 @@
       pointer-events: none;
     }
 
-    /* Top menu bar */
+    /* Top navigation area */
     header {
       position: relative;
       z-index: 10;
@@ -59,15 +59,17 @@
       backdrop-filter: blur(8px);
     }
 
-    /* logo.png - x3 bigger */
+    /*
+      Logo image
+      Original was around 300px.
+      Now it is x2 bigger = 600px.
+    */
     .logo {
-      width: 900px;
-      max-width: 45vw;
+      width: 600px;
+      max-width: 42vw;
       height: auto;
       display: block;
-
-      /* black blur only */
-      filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.9));
+      filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.95));
     }
 
     /* Navigation menu */
@@ -99,7 +101,7 @@
       box-shadow: 0 0 18px rgba(167, 255, 22, 0.55);
     }
 
-    /* Main two-column layout */
+    /* Main contact area */
     .main-section {
       position: relative;
       z-index: 2;
@@ -110,17 +112,21 @@
       align-items: center;
     }
 
-    /* Left contact form area */
     .left-side {
-      max-width: 780px;
+      max-width: 1000px;
     }
 
-    /* contactus.png title image */
+    /*
+      Contact Us image
+      Original was around 650px.
+      Now it is x1.8 bigger = 1170px.
+    */
     .contact-title-img {
-      width: 650px;
+      width: 1170px;
       max-width: 100%;
       margin-bottom: 24px;
       display: block;
+      filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.95));
     }
 
     /* Contact form */
@@ -133,7 +139,6 @@
       margin-bottom: 16px;
     }
 
-    /* Input boxes */
     .field input,
     .field textarea {
       width: 100%;
@@ -158,18 +163,23 @@
       color: #aaaaaa;
     }
 
-    /* Green border only when typing */
     .field input:focus,
     .field textarea:focus {
       border-color: #a7ff16;
       box-shadow:
-        0 0 10px rgba(0, 0, 0, 0.9),
+        0 0 12px rgba(0, 0, 0, 0.95),
         inset 0 0 18px rgba(0, 0, 0, 0.55);
     }
 
-    /* Send Message image button */
+    /*
+      Send Message image button
+      Original was around 430px.
+      Now it is x1.8 bigger = 774px.
+      Green glow removed.
+      Only black blur remains.
+    */
     .send-btn {
-      width: 430px;
+      width: 774px;
       max-width: 100%;
       border: none;
       background: transparent;
@@ -182,30 +192,32 @@
     .send-btn img {
       width: 100%;
       display: block;
-
-      /* black blur only, no green glow */
-      filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.95));
+      filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.95));
     }
 
     .send-btn:hover {
       transform: translateY(-3px) scale(1.02);
     }
 
-    /* Right mascot area */
+    /* Right side mascot area */
     .right-side {
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    /* mascot(1).png - x1.8 bigger */
+    /*
+      Mascot image
+      Original was around 630px.
+      Now it is x1.8 bigger = 1134px.
+      Green glow removed.
+      Only black blur remains.
+    */
     .mascot-card {
       width: 1134px;
       max-width: 100%;
       display: block;
-
-      /* black blur only, no green glow */
-      filter: drop-shadow(0 24px 34px rgba(0, 0, 0, 0.95));
+      filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.95));
     }
 
     /* Bottom signs image */
@@ -223,7 +235,7 @@
       display: block;
     }
 
-    /* Bottom-right green email button */
+    /* Bottom-right floating email button */
     .floating-email {
       position: fixed;
       right: 28px;
@@ -236,7 +248,7 @@
       font-size: 17px;
       padding: 16px 24px;
       border-radius: 999px;
-      box-shadow: 0 18px 28px rgba(0, 0, 0, 0.95);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.95);
       transition: 0.25s;
       border: 1px solid rgba(255, 255, 255, 0.4);
       cursor: pointer;
@@ -247,7 +259,7 @@
       background: #c5ff48;
     }
 
-    /* Tablet screen */
+    /* Tablet view */
     @media (max-width: 1000px) {
       header {
         flex-direction: column;
@@ -269,17 +281,24 @@
       }
 
       .logo {
-        width: 700px;
+        width: 520px;
         max-width: 90vw;
       }
 
+      .contact-title-img {
+        width: 100%;
+      }
+
+      .send-btn {
+        width: 100%;
+      }
+
       .mascot-card {
-        width: 950px;
-        max-width: 100%;
+        width: 100%;
       }
     }
 
-    /* Phone screen */
+    /* Mobile view */
     @media (max-width: 600px) {
       nav a {
         font-size: 13px;
@@ -293,16 +312,6 @@
       .field textarea {
         font-size: 16px;
         padding: 17px;
-      }
-
-      .logo {
-        width: 520px;
-        max-width: 95vw;
-      }
-
-      .mascot-card {
-        width: 760px;
-        max-width: 100%;
       }
 
       .floating-email {
@@ -359,7 +368,6 @@
             <textarea id="message" placeholder="Message" required></textarea>
           </div>
 
-          <!-- This image is your green Send Message button -->
           <button class="send-btn" type="submit">
             <img src="sendmessage.png" alt="Send Message">
           </button>
@@ -367,7 +375,7 @@
         </form>
       </section>
 
-      <!-- Right side: mascot contact image -->
+      <!-- Right side: mascot and email information image -->
       <section class="right-side">
         <img class="mascot-card" src="mascot(1).png" alt="Newson Sportec Contact Information">
       </section>
@@ -381,7 +389,7 @@
 
   </div>
 
-  <!-- Bottom-right email button -->
+  <!-- Bottom-right green email button -->
   <a id="floatingEmail" class="floating-email" href="mailto:newsonsportec@gmail.com">
     Send Email
   </a>
