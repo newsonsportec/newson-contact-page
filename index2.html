@@ -14,7 +14,7 @@
       box-sizing: border-box;
     }
 
-    /* Whole page style */
+    /* Whole website body */
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #050705;
@@ -32,7 +32,7 @@
       position: relative;
     }
 
-    /* Subtle grid background */
+    /* Subtle background grid */
     .page::before {
       content: "";
       position: absolute;
@@ -60,15 +60,26 @@
     }
 
     /*
-      Logo image
-      Original was around 300px.
-      Now it is x2 bigger = 600px.
+      This box hides the white line on the left side of logo.png.
+      The image is slightly moved left inside the hidden box.
     */
-    .logo {
+    .logo-box {
       width: 600px;
       max-width: 42vw;
+      overflow: hidden;
+      display: block;
+    }
+
+    /*
+      Logo image x2 bigger.
+      The translateX(-8px) hides the white line on the left.
+    */
+    .logo {
+      width: 608px;
+      max-width: none;
       height: auto;
       display: block;
+      transform: translateX(-8px);
       filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.95));
     }
 
@@ -76,28 +87,37 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 34px;
+      gap: 48px;
       flex-wrap: wrap;
     }
 
+    /*
+      Menu words are x2 bigger.
+      Old size was around 16px.
+      New size is 32px.
+    */
     nav a {
       color: #e8e8e8;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 32px;
       font-weight: 900;
       letter-spacing: 1px;
       transition: 0.25s;
+      white-space: nowrap;
     }
 
     nav a:hover {
       color: #a7ff16;
     }
 
+    /*
+      CONTACT US button is also x2 bigger.
+    */
     nav .active {
       color: #a7ff16;
-      padding: 12px 24px;
+      padding: 18px 36px;
       border: 1px solid #a7ff16;
-      border-radius: 30px;
+      border-radius: 40px;
       box-shadow: 0 0 18px rgba(167, 255, 22, 0.55);
     }
 
@@ -117,9 +137,7 @@
     }
 
     /*
-      Contact Us image
-      Original was around 650px.
-      Now it is x1.8 bigger = 1170px.
+      Contact Us image x1.8 bigger
     */
     .contact-title-img {
       width: 1170px;
@@ -172,11 +190,9 @@
     }
 
     /*
-      Send Message image button
-      Original was around 430px.
-      Now it is x1.8 bigger = 774px.
+      Send Message image x1.8 bigger.
       Green glow removed.
-      Only black blur remains.
+      Only black blur.
     */
     .send-btn {
       width: 774px;
@@ -207,11 +223,9 @@
     }
 
     /*
-      Mascot image
-      Original was around 630px.
-      Now it is x1.8 bigger = 1134px.
+      Mascot image x1.8 bigger.
       Green glow removed.
-      Only black blur remains.
+      Only black blur.
     */
     .mascot-card {
       width: 1134px;
@@ -235,7 +249,7 @@
       display: block;
     }
 
-    /* Bottom-right floating email button */
+    /* Bottom-right green email button */
     .floating-email {
       position: fixed;
       right: 28px;
@@ -260,6 +274,20 @@
     }
 
     /* Tablet view */
+    @media (max-width: 1200px) {
+      nav {
+        gap: 24px;
+      }
+
+      nav a {
+        font-size: 24px;
+      }
+
+      nav .active {
+        padding: 14px 28px;
+      }
+    }
+
     @media (max-width: 1000px) {
       header {
         flex-direction: column;
@@ -271,6 +299,10 @@
         gap: 18px;
       }
 
+      nav a {
+        font-size: 22px;
+      }
+
       .main-section {
         grid-template-columns: 1fr;
         padding-top: 40px;
@@ -280,9 +312,13 @@
         margin-top: 20px;
       }
 
-      .logo {
+      .logo-box {
         width: 520px;
         max-width: 90vw;
+      }
+
+      .logo {
+        width: 528px;
       }
 
       .contact-title-img {
@@ -301,7 +337,7 @@
     /* Mobile view */
     @media (max-width: 600px) {
       nav a {
-        font-size: 13px;
+        font-size: 16px;
       }
 
       nav .active {
@@ -329,7 +365,7 @@
 
     <!-- Top logo and menu -->
     <header>
-      <a href="index2.html">
+      <a class="logo-box" href="index2.html">
         <img class="logo" src="logo.png" alt="Newson Sportec Logo">
       </a>
 
@@ -428,4 +464,3 @@
 
 </body>
 </html>
-  
