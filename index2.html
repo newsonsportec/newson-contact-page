@@ -3,15 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Contact Us | Newson Sportec</title>
 
   <style>
+    /* 
+      This removes default browser spacing.
+      It helps the website touch the screen edges cleanly.
+    */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    /* 
+      Main page body style.
+      Dark background matches your Newson Sportec design.
+    */
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #050705;
@@ -20,6 +29,10 @@
       overflow-x: hidden;
     }
 
+    /* 
+      Whole website page background.
+      Green glow gives the sporty design.
+    */
     .page {
       min-height: 100vh;
       background:
@@ -28,6 +41,9 @@
       position: relative;
     }
 
+    /* 
+      Light green grid background effect.
+    */
     .page::before {
       content: "";
       position: absolute;
@@ -40,6 +56,9 @@
       pointer-events: none;
     }
 
+    /* 
+      Top navigation bar.
+    */
     header {
       position: relative;
       z-index: 10;
@@ -53,13 +72,24 @@
       backdrop-filter: blur(8px);
     }
 
+    /* 
+      LOGO IMAGE SIZE
+      
+      Original size was about 300px.
+      5x bigger means 300px x 5 = 1500px.
+      
+      max-width keeps it from breaking small screens.
+    */
     .logo {
-      width: 300px;
-      max-width: 38vw;
+      width: 1500px;
+      max-width: 45vw;
       height: auto;
       display: block;
     }
 
+    /* 
+      Navigation menu.
+    */
     nav {
       display: flex;
       align-items: center;
@@ -88,6 +118,11 @@
       box-shadow: 0 0 18px rgba(167, 255, 22, 0.55);
     }
 
+    /* 
+      Main content layout:
+      left side = contact form
+      right side = mascot image
+    */
     .main-section {
       position: relative;
       z-index: 2;
@@ -102,6 +137,9 @@
       max-width: 780px;
     }
 
+    /* 
+      Contact Us title image.
+    */
     .contact-title-img {
       width: 650px;
       max-width: 100%;
@@ -118,6 +156,9 @@
       margin-bottom: 16px;
     }
 
+    /* 
+      Input boxes are blank before users type.
+    */
     .field input,
     .field textarea {
       width: 100%;
@@ -150,6 +191,9 @@
         inset 0 0 18px rgba(0, 0, 0, 0.55);
     }
 
+    /* 
+      Send Message button image.
+    */
     .send-btn {
       width: 430px;
       max-width: 100%;
@@ -184,13 +228,24 @@
       justify-content: center;
     }
 
+    /* 
+      MASCOT IMAGE SIZE
+      
+      Original size was about 630px.
+      2x bigger means 630px x 2 = 1260px.
+      
+      max-width helps it fit on the screen.
+    */
     .mascot-card {
-      width: 630px;
-      max-width: 100%;
+      width: 1260px;
+      max-width: 120%;
       display: block;
       filter: drop-shadow(0 0 28px rgba(167, 255, 22, 0.38));
     }
 
+    /* 
+      Bottom signs image.
+    */
     .bottom-signs {
       position: relative;
       z-index: 3;
@@ -205,6 +260,10 @@
       display: block;
     }
 
+    /* 
+      Bottom-right green email button.
+      User can also click this button to open email.
+    */
     .floating-email {
       position: fixed;
       right: 28px;
@@ -228,6 +287,9 @@
       background: #c5ff48;
     }
 
+    /* 
+      Tablet screen adjustment.
+    */
     @media (max-width: 1000px) {
       header {
         flex-direction: column;
@@ -249,11 +311,19 @@
       }
 
       .logo {
-        max-width: 320px;
-        width: 80vw;
+        width: 900px;
+        max-width: 90vw;
+      }
+
+      .mascot-card {
+        width: 1000px;
+        max-width: 100%;
       }
     }
 
+    /* 
+      Phone screen adjustment.
+    */
     @media (max-width: 600px) {
       nav a {
         font-size: 13px;
@@ -275,6 +345,16 @@
         font-size: 15px;
         padding: 14px 18px;
       }
+
+      .logo {
+        width: 650px;
+        max-width: 95vw;
+      }
+
+      .mascot-card {
+        width: 850px;
+        max-width: 100%;
+      }
     }
   </style>
 </head>
@@ -282,27 +362,31 @@
 <body>
   <div class="page">
 
+    <!-- Top navigation area -->
     <header>
-      <a href="index.html">
+      <a href="index2.html">
         <img class="logo" src="logo.png" alt="Newson Sportec Logo">
       </a>
 
       <nav>
-        <a href="index.html">HOME</a>
+        <a href="index2.html">HOME</a>
         <a href="#">MOTORCYCLE</a>
         <a href="#">BICYCLE</a>
         <a href="#">WHEELCHAIR</a>
         <a href="#">NEWS</a>
-        <a class="active" href="index.html">CONTACT US</a>
+        <a class="active" href="index2.html">CONTACT US</a>
       </nav>
     </header>
 
+    <!-- Main contact section -->
     <main class="main-section">
 
+      <!-- Left side: Contact form -->
       <section class="left-side">
         <img class="contact-title-img" src="contactus.png" alt="Contact Us">
 
         <form id="contactForm" class="contact-form">
+
           <div class="field">
             <input id="name" type="text" placeholder="Name" required>
           </div>
@@ -324,28 +408,44 @@
           </button>
 
           <p class="privacy">✓ Your information is secure and will never be shared.</p>
+
         </form>
       </section>
 
+      <!-- Right side: Mascot image -->
       <section class="right-side">
         <img class="mascot-card" src="mascot(1).png" alt="Newson Sportec Contact Information">
       </section>
 
     </main>
 
+    <!-- Bottom signs image -->
     <section class="bottom-signs">
       <img src="buttomsigns.png" alt="Premium Quality Precision Engineered Trusted By Riders">
     </section>
 
   </div>
 
+  <!-- Bottom-right green email button -->
   <a id="floatingEmail" class="floating-email" href="mailto:newsonsportec@gmail.com">
     Send Email
   </a>
 
   <script>
+    /*
+      This email is where the message will go.
+    */
     const businessEmail = "newsonsportec@gmail.com";
 
+    /*
+      This function collects what the user typed:
+      Name
+      Email
+      Subject
+      Message
+
+      Then it prepares the email.
+    */
     function buildMailtoLink() {
       const name = document.getElementById("name").value.trim();
       const email = document.getElementById("email").value.trim();
@@ -364,11 +464,19 @@
         "&body=" + encodeURIComponent(body);
     }
 
+    /*
+      When the user clicks the Send Message image button,
+      the email app will open.
+    */
     document.getElementById("contactForm").addEventListener("submit", function(event) {
       event.preventDefault();
       window.location.href = buildMailtoLink();
     });
 
+    /*
+      When the user clicks the bottom-right green Send Email button,
+      the email app will also open.
+    */
     document.getElementById("floatingEmail").addEventListener("click", function(event) {
       event.preventDefault();
       window.location.href = buildMailtoLink();
@@ -377,3 +485,4 @@
 
 </body>
 </html>
+    
