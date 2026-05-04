@@ -140,6 +140,51 @@
     }
 
     /*
+      Social media icon row:
+      This area is above contactus.png.
+    */
+    .social-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .social-label {
+      color: #a7ff16;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      margin-right: 8px;
+      text-transform: uppercase;
+    }
+
+    .social-icon {
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.78);
+      border: 2px solid #a7ff16;
+      color: #a7ff16;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 28px;
+      font-weight: 900;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.95);
+      transition: 0.25s;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-4px) scale(1.08);
+      background: #a7ff16;
+      color: #050705;
+      box-shadow: 0 14px 26px rgba(0, 0, 0, 0.95);
+    }
+
+    /*
       Contact Us image
       x1.8 bigger
     */
@@ -341,6 +386,10 @@
       .mascot-card {
         width: 100%;
       }
+
+      .social-row {
+        justify-content: center;
+      }
     }
 
     /* Mobile view */
@@ -357,6 +406,19 @@
       .field textarea {
         font-size: 16px;
         padding: 17px;
+      }
+
+      .social-label {
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+        margin-right: 0;
+      }
+
+      .social-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 22px;
       }
 
       .floating-email {
@@ -399,8 +461,50 @@
     <!-- Main content -->
     <main class="main-section">
 
-      <!-- Left side: contact form -->
+      <!-- Left side: social icons, contact image, and contact form -->
       <section class="left-side">
+
+        <!-- Social media icons above contactus.png -->
+        <div class="social-row">
+          <span class="social-label">Follow Us</span>
+
+          <!-- Facebook -->
+          <a class="social-icon"
+             href="https://www.facebook.com/Newsonsportecnews"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Facebook">
+            f
+          </a>
+
+          <!-- LinkedIn -->
+          <a class="social-icon"
+             href="https://www.linkedin.com/company/111531327/admin/dashboard/"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="LinkedIn">
+            in
+          </a>
+
+          <!-- Instagram -->
+          <a class="social-icon"
+             href="https://www.instagram.com/newsonsportec"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Instagram">
+            ◎
+          </a>
+
+          <!-- YouTube -->
+          <a class="social-icon"
+             href="https://www.youtube.com/NEWSONSPORTEC"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="YouTube">
+            ▶
+          </a>
+        </div>
+
         <img class="contact-title-img" src="contactus.png" alt="Contact Us">
 
         <form id="contactForm" class="contact-form">
